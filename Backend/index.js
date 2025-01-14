@@ -19,9 +19,7 @@ app.use((req, res, next) => {
 
 // Route setup
 console.log("Setting up routes...");
-app.use("/", (req, res) => {
-  res.json({ message: "Hello World!" });
-});
+app.use("/", authRoutes);
 app.use("/api/auth", authRoutes); // Debug: Auth routes
 console.log("Auth routes loaded");
 
