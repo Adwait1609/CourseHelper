@@ -19,8 +19,8 @@ app.use((req, res, next) => {
 
 // Route setup
 console.log("Setting up routes...");
-app.use("/", (req, res) => {
-  res.redirect("/api/auth");
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 app.use("/api/auth", authRoutes); // Debug: Auth routes
 console.log("Auth routes loaded");
