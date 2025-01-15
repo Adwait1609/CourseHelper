@@ -9,7 +9,7 @@ const authRoutes = require("./routes/authRoutes");
 const coursesRoutes = require("./routes/courseRoutes");
 
 const app = express();
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";  // Default for local development
+const FRONTEND_URL = process.env.FRONTEND_URL;  // Default for local development
 
 // Configure CORS middleware
 const corsOptions = {
