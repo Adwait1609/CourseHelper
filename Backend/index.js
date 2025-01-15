@@ -9,7 +9,11 @@ const authRoutes = require("./routes/authRoutes");
 const coursesRoutes = require("./routes/courseRoutes");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://course-helper-git-main-adwait-s-projects-7b6fad5d.vercel.app/", // Replace with your actual frontend domain
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+}));
 app.use(express.json());
 
 // Debugging middleware to log all incoming requests
