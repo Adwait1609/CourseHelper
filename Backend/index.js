@@ -13,7 +13,7 @@ const app = express();
 // Configure CORS middleware
 const allowedOrigins = [
   "http://localhost:5173", // Local development
-  "https://course-helper-ikz5fos3m-adwait-s-projects-7b6fad5d.vercel.app", // Production frontend
+  "https://course-helper-2akobtq9u-adwait-s-projects-7b6fad5d.vercel.app", // Production frontend
 ];
 
 const corsOptions = {
