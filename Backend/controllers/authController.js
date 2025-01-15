@@ -3,6 +3,8 @@ const bcrypt = require("bcryptjs");
 const db = require("../db/index");
 
 const generateToken = (payload) => {
+  console.log("JWT_SECRET:", process.env.JWT_SECRET);
+  console.log("JWT_EXPIRATION:", process.env.JWT_EXPIRATION);
   return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRATION });
 };
 
