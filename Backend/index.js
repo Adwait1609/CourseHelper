@@ -10,27 +10,27 @@ const coursesRoutes = require("./routes/courseRoutes");
 
 const app = express();
 
-// Configure CORS middleware
-const allowedOrigins = [
-  "http://localhost:5173", // Local development
-  "https://course-helper-2akobtq9u-adwait-s-projects-7b6fad5d.vercel.app", // Production frontend
-];
+// // Configure CORS middleware
+// const allowedOrigins = [
+//   "http://localhost:5173", // Local development
+//   "https://course-helper-2akobtq9u-adwait-s-projects-7b6fad5d.vercel.app", // Production frontend
+// ];
 
-const corsOptions = {
-  origin: (origin, callback) => {
-      // Allow requests with no origin (e.g., mobile apps or curl)
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) {
-          return callback(null, true);
-      } else {
-          return callback(new Error("Not allowed by CORS"));
-      }
-  },
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // Allow cookies to be sent
-};
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//       // Allow requests with no origin (e.g., mobile apps or curl)
+//       if (!origin) return callback(null, true);
+//       if (allowedOrigins.includes(origin)) {
+//           return callback(null, true);
+//       } else {
+//           return callback(new Error("Not allowed by CORS"));
+//       }
+//   },
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   credentials: true, // Allow cookies to be sent
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 
 // app.use(cors({
