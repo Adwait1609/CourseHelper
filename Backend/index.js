@@ -11,11 +11,21 @@ const coursesRoutes = require("./routes/courseRoutes");
 const app = express();
 const FRONTEND_URL = process.env.FRONTEND_URL;  // Default for local development
 
-// Configure CORS middleware
+
 const corsOptions = {
-  origin: FRONTEND_URL, // Allow only the specified frontend domain
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      "https://course-helper-mj4a.vercel.app",
+      "https://course-helper-mj4a-gwxf0n6pz-adwait-s-projects-7b6fad5d.vercel.app"
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // Allow cookies to be sent
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
