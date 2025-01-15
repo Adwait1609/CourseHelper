@@ -78,7 +78,7 @@ const CoursesPage = () => {
   const handleAddNewCourse = async () => {
     const token = localStorage.getItem("jwtToken");
     try {
-      const response = await axios.post('${import.meta.env.VITE_BACKEND_URL}/api/courses', newCourse, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/courses`, newCourse, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCourses([...courses, response.data]);
